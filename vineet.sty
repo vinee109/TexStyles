@@ -1,0 +1,56 @@
+\usepackage{bbm,epsf,algorithm,amsmath,tikz,mathtools,mathrsfs}
+\usepackage{fancyvrb}
+\usetikzlibrary{positioning}
+\usepackage[noend]{algpseudocode}
+\parindent=0pt
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\p}[1]{\left(#1\right)}
+\newcommand{\mach}[1]{\langle#1\rangle}
+\renewcommand{\b}[1]{\left[#1\right]}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\argmin}[1]{\operatornamewithlimits{argmin}_{#1}~}
+\newcommand{\argmax}[1]{\operatornamewithlimits{argmax}_{#1}~}
+
+\renewcommand{\P}[1]{\mathbb{P}\p{#1}}
+\newcommand{\E}[1]{\mathbb{E}\b{#1}}
+\newcommand{\Var}[1]{\mathrm{Var}\p{#1}}
+\newcommand{\Cov}[1]{\mathrm{Cov}\p{#1}}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\aleq}[1]{\begin{align*}#1\end{align*}}
+
+\newcommand{\pwise}[1]{\ensuremath{\left\{\begin{matrix}#1\end{matrix}\right.}}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+\newcommand{\comment}[1]{% comment in equations
+\text{\phantom{(#1)}} \tag{#1}
+}
+
+% Figure alias
+\newcommand{\fig}[3]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=#1]{#2}
+        \caption{#3}
+    \end{figure}
+}
+
+% Algpseudo code additions
+\newcommand{\alg}[1]{\begin{algorithm}[H] \caption{#1} \begin{algorithmic}[1]}
+\newcommand{\ealg}{\end{algorithmic} \end{algorithm}}
+\newcommand{\aref}[1]{\textbf{Algorithm}~\ref{alg:#1}}
+\renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+\makeatletter
+\@addtoreset{algorithm}{chapter}% algorithm counter resets every chapter
+\makeatother
+
+\newcommand{\tbf}{\textbf}
+\newcommand{\tit}{\textit}
+\newcommand{\tu}{\underline}
+\newcommand{\ttt}{\texttt}
+\newcommand{\tsups}{\textsuperscript}
