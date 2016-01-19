@@ -1,0 +1,32 @@
+\documentclass[11pt]{report}
+
+\usepackage{amsmath,amssymb,amsthm,subcaption}
+\usepackage{some_class}  % class sty
+\usepackage[toc,page]{appendix}
+\usepackage{StudyGuideTitle}
+\input{macros}
+
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\textheight}{0.8in}
+\addtolength{\topmargin}{-.4in}
+\setlength{\parskip}{1em}
+\newtheorem{thm}{Theorem}[chapter]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[chapter]
+
+
+\project{Study Guide}  % <Class> Study Guide
+\author{Vineet Jain, Melissa Chen}
+\title{Title}  % Class title
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% CONTENT
+
+\input{app} % Appendix
+
+\end{document}
