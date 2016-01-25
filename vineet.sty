@@ -41,8 +41,17 @@
 }
 
 % Algpseudo code additions
-\newcommand{\alg}[1]{\begin{algorithm}[H] \caption{#1} \begin{algorithmic}[1]}
-\newcommand{\ealg}{\end{algorithmic} \end{algorithm}}
+\newcommand{\alg}[2]{
+    \begin{algorithm}[H] 
+        \caption{#1} 
+        \begin{algorithmic}[1]
+            #2
+        \end{algorithmic}
+    \end{algorithm}
+}
+\algdef{SE}[EVENT]{Event}{EndEvent}[1]{\textbf{upon event}\ #1\ \algorithmicdo}{\algorithmicend\ \textbf{event}}
+\algtext*{EndEvent}
+
 \newcommand{\aref}[1]{\textbf{Algorithm}~\ref{alg:#1}}
 \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
 \makeatletter
@@ -54,3 +63,7 @@
 \newcommand{\tu}{\underline}
 \newcommand{\ttt}{\texttt}
 \newcommand{\tsups}{\textsuperscript}
+\newcommand{\tsubs}[1]{$_{\text{#1}}$}
+
+\newcommand{\bullets}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\numberize}[1]{\begin{itemize}#1\end{itemize}}
