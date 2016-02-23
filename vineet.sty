@@ -1,5 +1,6 @@
 \usepackage{bbm,epsf,algorithm,amsmath,tikz,mathtools,mathrsfs}
 \usepackage{fancyvrb}
+\usepackage{graphicx, subfigure}
 \usetikzlibrary{positioning}
 \usepackage[noend]{algpseudocode}
 \parindent=0pt
@@ -27,11 +28,9 @@
 \newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
 \def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 
-\newcommand{\comment}[1]{% comment in equations
-\text{\phantom{(#1)}} \tag{#1}
-}
-
-% Figure alias
+%%%%%%%%%%
+% Figure %
+%%%%%%%%%%
 \newcommand{\fig}[3]{
     \begin{figure}[H]
         \centering
@@ -40,10 +39,21 @@
     \end{figure}
 }
 
-% Algpseudo code additions
+\newcommand{\figlabel}[4]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=#1]{#2}
+        \caption{#3}
+        \label{#4}
+    \end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AlgPseudo Code Additions %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\alg}[2]{
-    \begin{algorithm}[H] 
-        \caption{#1} 
+    \begin{algorithm}[H]
+        \caption{#1}
         \begin{algorithmic}[1]
             #2
         \end{algorithmic}
@@ -58,13 +68,20 @@
 \@addtoreset{algorithm}{chapter}% algorithm counter resets every chapter
 \makeatother
 
+%%%%%%%%%%%%%%%%%%%
+% Text Formatting %
+%%%%%%%%%%%%%%%%%%%
 \newcommand{\tbf}{\textbf}
 \newcommand{\tit}{\textit}
-\newcommand{\tbit}[1]{\tbf{\tit{#1}}}
+\newcommand{\tbit}[1]{\tit{\tbf{#1}}}
 \newcommand{\tu}{\underline}
 \newcommand{\ttt}{\texttt}
 \newcommand{\tsups}{\textsuperscript}
 \newcommand{\tsubs}[1]{$_{\text{#1}}$}
 
-\newcommand{\bullets}[1]{\begin{enumerate}#1\end{enumerate}}
-\newcommand{\numberize}[1]{\begin{itemize}#1\end{itemize}}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environment Shortcuts %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bullets}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\numberize}[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand{\quotes}[1]{\begin{quote}#1\end{quote}}
