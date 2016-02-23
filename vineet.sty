@@ -9,6 +9,9 @@
 \newcommand{\p}[1]{\left(#1\right)}
 \newcommand{\mach}[1]{\langle#1\rangle}
 \renewcommand{\b}[1]{\left[#1\right]}
+\newcommand{\cb}[1]{\left\{#1\right\}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 \newcommand{\argmin}[1]{\operatornamewithlimits{argmin}_{#1}~}
@@ -19,14 +22,24 @@
 \newcommand{\Var}[1]{\mathrm{Var}\p{#1}}
 \newcommand{\Cov}[1]{\mathrm{Cov}\p{#1}}
 \newcommand{\mb}[1]{\mathbf{#1}}
-\newcommand{\abs}[1]{\left| #1 \right|}
+
 
 \newcommand{\aleq}[1]{\begin{align*}#1\end{align*}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newcommand{\pwise}[1]{\ensuremath{\left\{\begin{matrix}#1\end{matrix}\right.}}
 
 \newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
 \def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+%%%%%%%%%%%%%%%%%%
+% Linear Algebra %
+%%%%%%%%%%%%%%%%%%
+\renewcommand{\matrix}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\Span}[1]{\text{span}\cb{#1}}
+\newcommand{\range}[1]{\text{range}\p{#1}}
+\newcommand{\Null}[1]{\text{Null}\p{#1}}
+\newcommand{\Rank}[1]{\text{Rank}\p{#1}}
 
 %%%%%%%%%%
 % Figure %
