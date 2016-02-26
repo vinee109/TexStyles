@@ -74,6 +74,7 @@
 }
 \algdef{SE}[EVENT]{Event}{EndEvent}[1]{\textbf{upon event}\ #1\ \algorithmicdo}{\algorithmicend\ \textbf{event}}
 \algtext*{EndEvent}
+\newcommand{\LineComment}[1]{\Statex /* \textit{#1} */}
 
 \newcommand{\aref}[1]{\textbf{Algorithm}~\ref{alg:#1}}
 \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
