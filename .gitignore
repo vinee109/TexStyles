@@ -1,0 +1,13 @@
+# Latex stuff
+*.pdf
+*.toc
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+.DS_Store
+
+#Plots folder
+**/plot
