@@ -166,12 +166,12 @@
 \def\Exp{\text{Exp}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%             New Theorem
+%%             New Theorem Styles
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}[chapter]
 
-\newtheorem{theorem}{\bf Theorem }
-%
-\newtheorem{definition}[theorem]{\bf Definition}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[chapter]
 %
 \newtheorem{claim}[theorem]{\bf Claim}
 %
@@ -181,6 +181,5 @@
 %%
 \newtheorem{corollary}[theorem]{\bf Corollary}
 
-\newtheorem{thm}{Theorem}[chapter]
-\theoremstyle{definition}
-\newtheorem{defn}{Definition}[chapter]
+
+
