@@ -1,10 +1,10 @@
 \usepackage{circuitikz}
 
-\newcommand{\Circuit}[1]{
+\newcommand{\Circuit}[2]{
     \begin{figure}[H]
     \centering
-    \begin{circuitikz} \draw
-    #1
+    \begin{circuitikz}[american voltages, american currents,scale=#1] \draw
+    #2
     ;
     \end{circuitikz}
     \end{figure}
