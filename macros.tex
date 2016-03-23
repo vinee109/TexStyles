@@ -176,7 +176,11 @@
 \newtheorem{corollary}[theorem]{\bf Corollary}
 
 \theoremstyle{definition}
-\newtheorem{defn}{Definition}
+\ifx\c@chapter\undefined
+    \newtheorem{defn}{Definition}[chapter]
+\else
+    \newtheorem{defn}{Definition}
+\fi
 
 
 
