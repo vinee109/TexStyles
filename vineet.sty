@@ -48,6 +48,8 @@
 %%%%%%%%%%
 % Figure %
 %%%%%%%%%%
+
+% Use: \fig{scale}{path to image}{caption}
 \newcommand{\fig}[3]{
     \begin{figure}[H]
         \centering
@@ -56,6 +58,7 @@
     \end{figure}
 }
 
+% Use: \figlabel{scale}{path to image}{caption}{label}
 \newcommand{\figlabel}[4]{
     \begin{figure}[H]
         \centering
@@ -64,6 +67,8 @@
         \label{#4}
     \end{figure}
 }
+
+% Use: \Table{caption}{other table formatting}
 \newcommand{\Table}[2]{
     \begin{table}[H]
         \centering
