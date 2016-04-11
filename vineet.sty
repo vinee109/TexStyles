@@ -89,7 +89,13 @@
 \newcommand{\LineComment}[1]{\Statex /* \textit{#1} */}
 
 \newcommand{\aref}[1]{\textbf{Algorithm}~\ref{alg:#1}}
-\renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+
+\ifx\c@chapter\undefined
+    \renewcommand{\thealgorithm}{\arabic{algorithm}}
+\else
+    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+\fi
+
 \makeatletter
 \@addtoreset{algorithm}{chapter}% algorithm counter resets every chapter
 \makeatother
