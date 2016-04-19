@@ -1,12 +1,27 @@
 %%%%%%%%%%%%%%%%%%
 % Theorem Styles %
 %%%%%%%%%%%%%%%%%%
+\ifx\c@chapter\undefined
+    % We are not working with chapters
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{claim}[theorem]{\bf Claim}
+    \newtheorem{proposition}[theorem]{\bf Proposition}
+    \newtheorem{lemma}[theorem]{\bf Lemma}
+    \newtheorem{corollary}[theorem]{\bf Corollary}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{claim}[theorem]{\bf Claim}
-\newtheorem{proposition}[theorem]{\bf Proposition}
-\newtheorem{lemma}[theorem]{\bf Lemma}
-\newtheorem{corollary}[theorem]{\bf Corollary}
+    \theoremstyle{definition}
+    \newtheorem{defn}{Definition}
+\else
+    % We have chapters
+    \newtheorem{theorem}{Theorem}[chapter]
+    \newtheorem{claim}[theorem]{\bf Claim}
+    \newtheorem{proposition}[theorem]{\bf Proposition}
+    \newtheorem{lemma}[theorem]{\bf Lemma}
+    \newtheorem{corollary}[theorem]{\bf Corollary}
+
+    \theoremstyle{definition}
+    \newtheorem{defn}{Definition}[chapter]
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % Environment Shortcuts %
@@ -53,25 +68,3 @@
         #2
     \end{table}
 }
-
-\ifx\c@chapter\undefined
-    % We are not working with chapters
-    \newtheorem{theorem}{Theorem}
-    \newtheorem{claim}[theorem]{\bf Claim}
-    \newtheorem{proposition}[theorem]{\bf Proposition}
-    \newtheorem{lemma}[theorem]{\bf Lemma}
-    \newtheorem{corollary}[theorem]{\bf Corollary}
-
-    \theoremstyle{definition}
-    \newtheorem{defn}{Definition}
-\else
-    % We have chapters
-    \newtheorem{theorem}{Theorem}[chapter]
-    \newtheorem{claim}[theorem]{\bf Claim}
-    \newtheorem{proposition}[theorem]{\bf Proposition}
-    \newtheorem{lemma}[theorem]{\bf Lemma}
-    \newtheorem{corollary}[theorem]{\bf Corollary}
-
-    \theoremstyle{definition}
-    \newtheorem{defn}{Definition}[chapter]
-\fi
