@@ -6,6 +6,11 @@
 \usepackage{pdfpages}
 \usetikzlibrary{positioning}
 \usepackage[noend]{algpseudocode}
+
+% custom styles
+\usepackage{math}
+\usepackage{enviornments}
+
 \parindent=0pt
 
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
@@ -95,9 +100,9 @@
 \algdef{SE}[EVENT]{Event}{EndEvent}[1]{\textbf{upon event}\ #1\ \algorithmicdo}{\algorithmicend\ \textbf{event}}
 \algtext*{EndEvent}
 \newcommand{\LineComment}[1]{\Statex /* \textit{#1} */}
-
+% Referencing algorithm labels
 \newcommand{\aref}[1]{\textbf{Algorithm}~\ref{alg:#1}}
-
+% Algorithm Labelling depending on when we have chapters or not
 \ifx\c@chapter\undefined
     \renewcommand{\thealgorithm}{\arabic{algorithm}}
 \else
