@@ -6,77 +6,15 @@
 \usepackage{pdfpages}
 \usetikzlibrary{positioning}
 \usepackage[noend]{algpseudocode}
+
 \parindent=0pt
 
-\newcommand{\R}{\ensuremath{\mathbb{R}}}
-\newcommand{\p}[1]{\left(#1\right)}
-\newcommand{\mach}[1]{\langle#1\rangle}
-\renewcommand{\b}[1]{\left[#1\right]}
-\newcommand{\cb}[1]{\left\{#1\right\}}
-\newcommand{\abs}[1]{\left| #1 \right|}
-
-\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
-\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
-\newcommand{\argmin}[1]{\operatornamewithlimits{argmin}_{#1}~}
-\newcommand{\argmax}[1]{\operatornamewithlimits{argmax}_{#1}~}
-\renewcommand{\deg}{^\circ}
-
-\renewcommand{\P}[1]{\mathbb{P}\p{#1}}
-\newcommand{\E}[1]{\mathbb{E}\b{#1}}
-\newcommand{\Var}[1]{\mathrm{Var}\p{#1}}
-\newcommand{\Cov}[1]{\mathrm{Cov}\p{#1}}
-\newcommand{\mb}[1]{\mathbf{#1}}
-
-
-\newcommand{\aleq}[1]{\begin{align*}#1\end{align*}}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newcommand{\pwise}[1]{\ensuremath{\left\{\begin{matrix}#1\end{matrix}\right.}}
 
 \newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
 \def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
-
-%%%%%%%%%%%%%%%%%%
-% Linear Algebra %
-%%%%%%%%%%%%%%%%%%
-\renewcommand{\matrix}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand{\Span}[1]{\text{span}\cb{#1}}
-\newcommand{\range}[1]{\text{range}\p{#1}}
-\newcommand{\Null}[1]{\text{Null}\p{#1}}
-\newcommand{\Rank}[1]{\text{Rank}\p{#1}}
-
-%%%%%%%%%%
-% Figure %
-%%%%%%%%%%
-
-% Use: \fig{scale}{path to image}{caption}
-\newcommand{\fig}[3]{
-    \begin{figure}[H]
-        \centering
-        \includegraphics[scale=#1]{#2}
-        \caption{#3}
-    \end{figure}
-}
-
-% Use: \figlabel{scale}{path to image}{caption}{label}
-\newcommand{\figlabel}[4]{
-    \begin{figure}[H]
-        \centering
-        \includegraphics[scale=#1]{#2}
-        \caption{#3}
-        \label{#4}
-    \end{figure}
-}
-
-% Use: \Table{caption}{other table formatting}
-\newcommand{\Table}[2]{
-    \begin{table}[H]
-        \centering
-        \caption{#1}
-        \vspace{0.5em}
-        #2
-    \end{table}
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % AlgPseudo Code Additions %
@@ -92,9 +30,15 @@
 \algdef{SE}[EVENT]{Event}{EndEvent}[1]{\textbf{upon event}\ #1\ \algorithmicdo}{\algorithmicend\ \textbf{event}}
 \algtext*{EndEvent}
 \newcommand{\LineComment}[1]{\Statex /* \textit{#1} */}
-
+% Referencing algorithm labels
 \newcommand{\aref}[1]{\textbf{Algorithm}~\ref{alg:#1}}
-\renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+% Algorithm Labelling depending on when we have chapters or not
+\ifx\c@chapter\undefined
+    \renewcommand{\thealgorithm}{\arabic{algorithm}}
+\else
+    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+\fi
+
 \makeatletter
 \@addtoreset{algorithm}{chapter}% algorithm counter resets every chapter
 \makeatother
@@ -109,13 +53,3 @@
 \newcommand{\ttt}{\texttt}
 \newcommand{\tsups}{\textsuperscript}
 \newcommand{\tsubs}[1]{$_{\text{#1}}$}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% Environment Shortcuts %
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\bullets}[1]{\begin{itemize}#1\end{itemize}}
-\newcommand{\numberize}[1]{\begin{enumerate}#1\end{enumerate}}
-\newcommand{\quotes}[1]{\begin{quote}#1\end{quote}}
-\newcommand{\Defn}[1]{\begin{defn}#1\end{defn}}
-\newcommand{\Center}[1]{\begin{center}#1\end{center}}
-\newcommand{\Thm}[1]{\begin{theorem}#1\end{theorem}}
