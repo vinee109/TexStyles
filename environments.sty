@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%
+% Theorem Styles %
+%%%%%%%%%%%%%%%%%%
+\ifx\c@chapter\undefined
+    % We are not working with chapters
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{claim}[theorem]{\bf Claim}
+    \newtheorem{proposition}[theorem]{\bf Proposition}
+    \newtheorem{lemma}[theorem]{\bf Lemma}
+    \newtheorem{corollary}[theorem]{\bf Corollary}
+
+    \theoremstyle{definition}
+    \newtheorem{defn}{Definition}
+\else
+    % We have chapters
+    \newtheorem{theorem}{Theorem}[chapter]
+    \newtheorem{claim}[theorem]{\bf Claim}
+    \newtheorem{proposition}[theorem]{\bf Proposition}
+    \newtheorem{lemma}[theorem]{\bf Lemma}
+    \newtheorem{corollary}[theorem]{\bf Corollary}
+
+    \theoremstyle{definition}
+    \newtheorem{defn}{Definition}[chapter]
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Environment Shortcuts %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bullets}[1]{\begin{itemize}#1\end{itemize}}
+\newcommand{\numberize}[1]{\begin{enumerate}#1\end{enumerate}}
+\newcommand{\quotes}[1]{\begin{quote}#1\end{quote}}
+\newcommand{\Defn}[1]{\begin{defn}#1\end{defn}}
+\newcommand{\Center}[1]{\begin{center}#1\end{center}}
+\newcommand{\Thm}[1]{\begin{theorem}#1\end{theorem}}
+
+%%%%%%%%%%
+% Figure %
+%%%%%%%%%%
+\newcommand{\fig}[3]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=#1]{#2}
+        \caption{#3}
+    \end{figure}
+}
+
+\newcommand{\fignocap}[3]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=#1]{#2}
+        #3
+    \end{figure}
+}
+
+\newcommand{\figlabel}[4]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=#1]{#2}
+        \caption{#3}
+        \label{#4}
+    \end{figure}
+}
+\newcommand{\Table}[2]{
+    \begin{table}[H]
+        \centering
+        \caption{#1}
+        \vspace{0.5em}
+        #2
+    \end{table}
+}
